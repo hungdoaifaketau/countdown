@@ -1,0 +1,308 @@
+/* ===============================
+   GLOBAL
+================================ */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    background: #29a583;
+    overflow: hidden;
+}
+
+/* ===============================
+   BACKGROUND VIDEO
+================================ */
+#video-bg {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -10;
+}
+
+/* ===============================
+   DECORATIVE ELEMENTS
+================================ */
+.circle {
+    position: fixed;
+    width: 10%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    opacity: 0.1;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Gift boxes */
+.presents {
+    position: fixed;
+    width: 40%;
+    left: 2%;
+    bottom: -5%;
+    z-index: 5;
+}
+
+/* Tree */
+.tree {
+    position: fixed;
+    width: 25%;
+    bottom: 0;
+    right: 8%;
+    z-index: 5;
+}
+
+/* Fur branch */
+.fur-branch {
+    position: fixed;
+    width: 20%;
+    top: -8%;
+    right: -50px;
+    opacity: 0.7;
+}
+
+/* ===============================
+   HEADER DECOR
+================================ */
+#branch1, #branch2, #branch3, 
+#branch4, #branch5, #branch6, #branch7 {
+    position: absolute;
+    top: -5%;
+    width: 14.3%;
+    margin-top: 20px;
+}
+
+#branch1 { left: 0%; }
+#branch2 { left: 14.3%; }
+#branch3 { left: 28.6%; }
+#branch4 { left: 42.9%; }
+#branch5 { left: 57.2%; }
+#branch6 { left: 71.5%; }
+#branch7 { left: 85.8%; }
+
+.header-balls {
+    position: absolute;
+    width: 3%;
+    height: auto;
+    z-index: 1;
+}
+
+.ball1 { top: 5%; left: 5%; }
+.ball2 { top: 7%; left: 25%; }
+.ball3 { top: 2%; left: 45%; width: 10%; }
+.ball4 { top: 4%; left: 65%; width: 8%; }
+.ball5 { top: 6%; left: 85%; }
+
+/* ===============================
+   SANTA
+================================ */
+#santa-gif {
+    position: fixed;
+    left: -20vw;
+    top: 10%;
+    width: 10%;
+    max-width: 500px;
+    transform: scaleX(-1);
+    z-index: 4;
+}
+
+/* ===============================
+   SNOW
+================================ */
+.snowflake {
+    position: absolute;
+    top: -10px;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* ===============================
+   COUNTDOWN TITLE
+================================ */
+.Countdown-title {
+    position: fixed;
+    top: 38%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    font-family: 'Mountains of Christmas', cursive;
+    font-size: 3.2rem;
+    text-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+/* ===============================
+   COUNTDOWN DISPLAY
+================================ */
+.Countdown-display {
+    position: fixed;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 25px;
+    max-width: 90%;
+    z-index: 6;
+}
+
+.Countdown-time {
+    width: 130px;
+    padding: 30px 20px;
+    border-radius: 25px;
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255,255,255,0.35);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Countdown-time:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+}
+
+.Countdown-time-value {
+    font-size: 2.8rem;
+    font-weight: 600;
+}
+
+.Countdown-time-label {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+/* ===============================
+   UTILITY
+================================ */
+#box {
+    overflow: hidden;
+}
+/* ===============================
+   MOBILE RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+
+    /* Title */
+    .Countdown-title {
+        font-size: 2rem;
+        top: 22%;
+        padding: 0 10px;
+    }
+
+    /* Countdown layout */
+    .Countdown-display {
+        top: 55%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        width: 90%;
+    }
+
+    .Countdown-time {
+        width: 100%;
+        padding: 22px 10px;
+        border-radius: 18px;
+    }
+
+    .Countdown-time-value {
+        font-size: 2.2rem;
+    }
+
+    .Countdown-time-label {
+        font-size: 0.85rem;
+    }
+
+    /* Santa */
+    #santa-gif {
+        width: 18%;
+        top: 12%;
+        opacity: 0.9;
+    }
+
+    /* Presents */
+    .presents {
+        width: 55%;
+        left: -10%;
+        bottom: -8%;
+    }
+
+    /* Tree */
+    .tree {
+        width: 35%;
+        right: -10%;
+    }
+
+    /* Branches & balls – giảm rối */
+    .branches img,
+    .header-balls {
+        display: none;
+    }
+
+    /* Fur branch */
+    .fur-branch {
+        width: 35%;
+        top: -6%;
+        right: -20%;
+        opacity: 0.5;
+    }
+
+    /* Snow nhẹ hơn */
+    .snowflake {
+        opacity: 0.6;
+        width: 6px;
+        height: 6px;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+}
+.Countdown-title {
+    position: fixed;
+    top: 26%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    padding: 0 20px;
+    text-align: center;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+
+    color: #fff;
+    text-shadow: 
+        0 5px 18px rgba(0,0,0,0.35),
+        0 0 20px rgba(255,255,255,0.35);
+
+    z-index: 20;
+}
+
+.Countdown-display {
+    position: fixed;
+    top: 62%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 25px;
+    max-width: 90%;
+    z-index: 10;
+}
